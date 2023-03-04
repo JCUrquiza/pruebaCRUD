@@ -66,7 +66,7 @@ export class DetallesEmpleadosComponent {
     empleado.parentesco = formulario.parentesco;
     empleado.sexo = formulario.sexo;
 
-    Swal.fire('Correcto', 'Empleado actualizado correctamente', 'success');
+    Swal.fire('Correcto', 'Empleado actualizado  correctamente', 'success');
     this.router.navigate(['/listarEmpleados']);
   }
   
@@ -82,6 +82,7 @@ export class DetallesEmpleadosComponent {
       confirmButtonText: 'Sí, eliminarlo',
       cancelButtonText: 'No, cancelar acción'
     }).then((result) => {
+      
       if (result.isConfirmed) {
         Swal.fire(
           '¡Eliminado!',
@@ -93,6 +94,7 @@ export class DetallesEmpleadosComponent {
     
         this.router.navigate(['/listarEmpleados']);
       }
+
     })
     
   }

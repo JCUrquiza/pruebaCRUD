@@ -1,3 +1,44 @@
-<p>crear-empleados works!</p>
-<button class="btn btn-primary" (click)="buttonIrACrearEmpleado()" >Crear empleado</button>
-<button class="btn btn-primary" (click)="verFormulario()" >Ver Resultados</button>
+<div style="position: relative; margin-bottom: 80px;">
+    <div style="align-items: center; margin-bottom: 10px;">
+        <h3>Listado de empleados</h3>
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)="buttonIrACrearEmpleado()" style="float: right;">Crear empleado</button>
+    </div>
+</div>
+
+<ng-container *ngIf="boolMostrarTabla; else mensaje">
+    <p-table [value]="empleados" styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="caption">
+            Empleados
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Puesto Trabajo</th>
+                <th>Detalles</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-empleado>
+            <tr>
+                <td>{{empleado.identificador}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellidoPaterno}}</td>
+                <td>{{empleado.apellidoPaterno}}</td>
+                <td>{{empleado.puestoTrabajo}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="buttonIrADetallesEmpleado(empleado.identificador)">Detalles</button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>    
+</ng-container>
+
+<ng-template #mensaje>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <h5>Aún no hay empleados registrados</h5>
+    </div>
+</ng-template>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,21 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  items: MenuItem[] = [];
+
   ngOnInit() {
+
+    this.items = [
+      {
+        label: 'KSP - Evaluación Técnica'
+      },
+      {
+        label: 'Listado de empleados',
+        icon: 'pi pi-fw pi-book',
+        // items: [],
+        routerLink: '/listarEmpleados'
+      }
+    ];
+
   }
 }

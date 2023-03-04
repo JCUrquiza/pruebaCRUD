@@ -10,6 +10,10 @@ import { EmpleadoInterface } from 'src/app/nucleo/interfaces/empleado.interface'
 })
 export class ListarEmpleadosComponent {
 
+  empleados: any[] = [];
+
+  boolMostrarTabla: boolean = false;
+
   constructor(
     private router: Router,
     private formDataService: ServiceFormService
@@ -18,13 +22,24 @@ export class ListarEmpleadosComponent {
   ngOnInit() {
 
     const EMPLEADOS = this.formDataService.obtenerResultados();
-    console.log(EMPLEADOS);
+    this.empleados = EMPLEADOS;
+
+    if (this.empleados.length > 0) {
+      this.boolMostrarTabla = true;
+    } else {
+      this.boolMostrarTabla = false;
+    }
 
   }
 
   buttonIrACrearEmpleado() {
     console.log('crear empleado');
     this.router.navigate(['/crearEmpleado']);
+  }
+
+  buttonIrADetallesEmpleado(id: string) {
+    console.log(id);
+    this.router.navigate(['/detallesEmpleados/', id]);
   }
 
   verFormulario() {

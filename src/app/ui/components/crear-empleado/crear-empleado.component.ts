@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceFormService } from 'src/app/nucleo/services/service-form.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-empleado',
@@ -35,8 +36,8 @@ export class CrearEmpleadoComponent {
   }
 
   enviarFormulario() {
-    console.log(this.formulario.value);
     this.formDataService.guardarFormulario(this.formulario.value);
+    Swal.fire('Correcto', 'Empleado guardado correctamente', 'success');
     this.router.navigate(['/listarEmpleados']);
   }
 

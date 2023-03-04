@@ -18,6 +18,11 @@ import { SharedModule } from './shared/shared.module';
 import { UiModule } from './ui/ui.module';
 import { CrearEmpleadoComponent } from './ui/components/crear-empleado/crear-empleado.component';
 
+// Prime NG
+import { CalendarModule } from 'primeng/calendar';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { TableModule } from 'primeng/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +39,9 @@ import { CrearEmpleadoComponent } from './ui/components/crear-empleado/crear-emp
     FormsModule,
     SharedModule,
     UiModule,
+    CalendarModule,
+    InputNumberModule,
+    TableModule,
     RouterModule.forRoot( ROUTES, { useHash: true } )
   ],
   exports: [],

@@ -16,9 +16,9 @@ export class ServiceFormService {
   obtenerResultados() {
     return this.resultados;
   }
-
+  
   verResultados() {
-    console.log(this.resultados);
+    return this.resultados;
   }
 
 }

@@ -1,0 +1,191 @@
+<!-- <form > -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Detalles de empleado</h2>
+            <form 
+                class="row g-3 needs-validation" 
+                novalidate 
+                [formGroup]="formulario" 
+                (ngSubmit)="actualizarEmpleado()" 
+                style="margin-top: 30px; border: black solid 2px; padding: 10px; border-radius: 3%;">
+    
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-6">
+                        <label for="identificador">Identificador: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-8"
+                                type="text" 
+                                pInputText 
+                                placeholder="Username" 
+                                id="identificador" 
+                                name="identificador" 
+                                formControlName="identificador">         
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="identificador">Foto: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-8"
+                                type="text" 
+                                pInputText 
+                                placeholder="Foto" 
+                                id="foto" 
+                                name="foto" 
+                                formControlName="foto">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row justify-content-center" style="margin-top: 30px;">
+                    <div class="form-group col-md-4">
+                        <label for="nombre">Nombre: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-10"
+                                type="text" 
+                                pInputText 
+                                placeholder="Nombre" 
+                                id="nombre" 
+                                name="nombre" 
+                                formControlName="nombre">         
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="apellidoPaterno">Apellido Paterno: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-10"
+                                type="text" 
+                                pInputText 
+                                placeholder="Apellido Paterno" 
+                                id="apellidoPaterno" 
+                                name="apellidoPaterno" 
+                                formControlName="apellidoPaterno">         
+                        </div>
+                    </div>
+    
+                    <div class="form-group col-md-4">
+                        <label for="apellidoMaterno">Apellido Materno: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-10"
+                                type="text" 
+                                pInputText 
+                                placeholder="Apellido Materno" 
+                                id="apellidoMaterno" 
+                                name="apellidoMaterno" 
+                                formControlName="apellidoMaterno">         
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row justify-content-center" style="margin-top: 30px;">
+                    <div class="form-group col-md-4">
+                        <label for="puestoTrabajo">Puesto de Trabajo: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-10"
+                                type="text" 
+                                pInputText 
+                                placeholder="Puesto de Trabajo" 
+                                id="puestoTrabajo" 
+                                name="puestoTrabajo" 
+                                formControlName="puestoTrabajo">         
+                        </div>
+                    </div>
+    
+                    <div class="form-group col-md-4">
+                        <label for="salario">Salario: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-money-bill"></i></span>
+                            <p-inputNumber inputId="currency-us" mode="currency" currency="USD" locale="en-US" formControlName="salario">
+                            </p-inputNumber>
+                        </div>
+                    </div>
+    
+                    <div class="form-group col-md-4">
+                        <label for="estatus">Estatus: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-10"
+                                type="text" 
+                                pInputText 
+                                placeholder="Estatus" 
+                                id="estatus" 
+                                name="estatus" 
+                                formControlName="estatus">         
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row justify-content-center" style="margin-top: 30px;">
+                    <div class="form-group col-md-3">
+                        <label for="fechaContratacion">Fecha de Contratacion: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <p-calendar formControlName="fechaContratacion"></p-calendar>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <p-calendar formControlName="fechaNacimiento"></p-calendar>
+                        </div>
+                    </div>
+    
+                    <div class="form-group col-md-3">
+                        <label for="parentesco">Parentesco: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-6"
+                                type="text" 
+                                pInputText 
+                                placeholder="Parentesco" 
+                                id="parentesco" 
+                                name="parentesco" 
+                                formControlName="parentesco">         
+                        </div>
+                    </div>
+    
+                    <div class="form-group col-md-3">
+                        <label for="sexo">Sexo: </label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                            <input 
+                                class="col-md-6"
+                                type="text" 
+                                pInputText 
+                                placeholder="sexo" 
+                                id="sexo" 
+                                name="sexo" 
+                                formControlName="sexo">
+                        </div>
+                    </div>
+                </div>
+    
+                <div style="margin-top: 30px; float: left;">
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                    <button type="button" class="btn btn-warning" style="float: right;" (click)="eliminarEmpleado()" >Eliminar</button>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</div>
+    
+          

@@ -6,7 +6,7 @@ import { CrearEmpleadoComponent } from './ui/components/crear-empleado/crear-emp
 export const ROUTES: Routes = [
     { path: 'listarEmpleados', component: ListarEmpleadosComponent },
     { path: 'crearEmpleado', component: CrearEmpleadoComponent },
-    { path: 'detallesEmpleados', component: DetallesEmpleadosComponent },
+    { path: 'detallesEmpleados/:id', component: DetallesEmpleadosComponent },
     { path: '', pathMatch: 'full', redirectTo: 'listarEmpleados' },
     { path: '**', pathMatch: 'full', redirectTo: 'listarEmpleados' },
 ];

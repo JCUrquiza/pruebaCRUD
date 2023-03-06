@@ -14,6 +14,7 @@ export class ListarEmpleadosComponent {
   empleados: EmpleadoInterface[] = [];
 
   boolMostrarTabla: boolean = false;
+  boolCargarInfo: boolean = false;
 
   constructor(
     private router: Router,
@@ -21,7 +22,7 @@ export class ListarEmpleadosComponent {
   ) {}
 
   ngOnInit() {
-
+    this.boolCargarInfo = true;
     // const EMPLEADOS = this.formDataService.obtenerResultados();
     this.formDataService.listarTodosEmpleados().subscribe( (res) => {
       console.log(res);
@@ -42,7 +43,7 @@ export class ListarEmpleadosComponent {
           sexo: empleado.sexo
         });
       }
-      console.log(this.empleados);
+      this.boolCargarInfo = false;
 
       if (this.empleados.length > 0) {
         this.boolMostrarTabla = true;

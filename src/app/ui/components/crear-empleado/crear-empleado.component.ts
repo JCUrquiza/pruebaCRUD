@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceFormService } from 'src/app/nucleo/services/service-form.service';
@@ -9,9 +9,11 @@ import Swal from 'sweetalert2';
   templateUrl: './crear-empleado.component.html',
   styleUrls: ['./crear-empleado.component.scss']
 })
-export class CrearEmpleadoComponent {
+export class CrearEmpleadoComponent implements OnInit {
 
   formulario: FormGroup;
+
+  boolSkeletonView: boolean = true;
 
   constructor(
     private fb: FormBuilder,
@@ -32,6 +34,14 @@ export class CrearEmpleadoComponent {
       parentesco: [''],
       sexo: ['']
     });
+  }
+
+  ngOnInit(): void {
+    
+    setTimeout(() => {
+      this.boolSkeletonView = false;
+    }, 2000)
+
   }
 
   enviarFormulario() {

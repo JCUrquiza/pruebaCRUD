@@ -40,8 +40,8 @@ export class ServiceFormService {
     return this.http.post(`http://127.0.0.1:8000/empleado/detalles/` + id, id);
   }
 
-  eliminarEmpleado(id: string): Observable<any> {
-    return this.http.delete(`http://127.0.0.1:8000/empleado/` + id);
+  eliminarEmpleado(id: any): Observable<any> {
+    return this.http.delete(`http://127.0.0.1:8000/empleado/` + id, id);
   }
 
   eliminarTodosEmpleados(): Observable<any> {

@@ -122,20 +122,20 @@ export class DetallesEmpleadosComponent implements OnInit {
       confirmButtonText: 'Sí, eliminarlo',
       cancelButtonText: 'No, cancelar acción'
     }).then((result) => {
-      
-      if (result.isConfirmed) {
-        Swal.fire(
-          '¡Eliminado!',
-          'El empleado ha sido eliminado',
-          'success'
-        )
-        this.formDataService.eliminarEmpleado(this.id).subscribe( res => {
-          console.log(res);
-        });
-    
-        this.router.navigate(['/listarEmpleados']);
-      }
 
+      this.formDataService.eliminarEmpleado(this.id).subscribe( res => {
+        console.log(res);
+        this.router.navigate(['/listarEmpleados']);
+
+        if (result.isConfirmed) {
+          Swal.fire(
+            '¡Eliminado!',
+            'El empleado ha sido eliminado',
+            'success'
+          ) 
+        }
+        
+      });
     })
     
   }

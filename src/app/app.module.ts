@@ -24,6 +24,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { SkeletonModule } from 'primeng/skeleton';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     InputNumberModule,
     TableModule,
     RadioButtonModule,
+    SkeletonModule,
     RouterModule.forRoot( ROUTES, { useHash: true } )
   ],
   exports: [],

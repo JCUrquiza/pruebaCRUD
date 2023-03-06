@@ -1,10 +1,8 @@
-<!--
-<div *ngIf="!boolMostrarTabla">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;" *ngIf="boolCargarInfo">
     <app-spinner></app-spinner>
 </div>
--->
     
-<div>
+<div *ngIf="!boolCargarInfo">
     <!-- *ngIf="boolMostrarTabla" -->
     <div style="position: relative; margin-bottom: 80px;">
         <div style="align-items: center; margin-bottom: 10px;">

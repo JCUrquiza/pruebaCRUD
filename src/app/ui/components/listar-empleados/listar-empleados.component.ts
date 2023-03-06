@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceFormService } from 'src/app/nucleo/services/service-form.service';
 import { EmpleadoInterface } from 'src/app/nucleo/interfaces/empleado.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listar-empleados',
@@ -10,7 +11,7 @@ import { EmpleadoInterface } from 'src/app/nucleo/interfaces/empleado.interface'
 })
 export class ListarEmpleadosComponent {
 
-  empleados: any[] = [];
+  empleados: EmpleadoInterface[] = [];
 
   boolMostrarTabla: boolean = false;
 
@@ -21,29 +22,55 @@ export class ListarEmpleadosComponent {
 
   ngOnInit() {
 
-    const EMPLEADOS = this.formDataService.obtenerResultados();
-    this.empleados = EMPLEADOS;
+    // const EMPLEADOS = this.formDataService.obtenerResultados();
+    this.formDataService.listarTodosEmpleados().subscribe( (res) => {
+      console.log(res);
+      for (const empleado of res) {
+        //this.empleados = res;
+        this.empleados.push({
+          id: empleado.id,
+          foto: empleado.foto,
+          nombre: empleado.nombre,
+          aPaterno: empleado.aPaterno,
+          aMaterno: empleado.aMaterno,
+          puestoTrab: empleado.puestoTrab,
+          salario: empleado.salario,
+          estatus: empleado.estatus,
+          fechaContratacion: empleado.fechaContratacion,
+          fechaNacimiento: empleado.fechaNacimiento,
+          parentesco: empleado.parentesco,
+          sexo: empleado.sexo
+        });
+      }
+      console.log(this.empleados);
 
-    if (this.empleados.length > 0) {
-      this.boolMostrarTabla = true;
-    } else {
-      this.boolMostrarTabla = false;
-    }
+      if (this.empleados.length > 0) {
+        this.boolMostrarTabla = true;
+      } else {
+        this.boolMostrarTabla = false;
+      }
+    });
 
   }
 
   buttonIrACrearEmpleado() {
-    console.log('crear empleado');
     this.router.navigate(['/crearEmpleado']);
   }
 
   buttonIrADetallesEmpleado(id: string) {
-    console.log(id);
     this.router.navigate(['/detallesEmpleados/', id]);
   }
 
   verFormulario() {
     this.formDataService.verResultados();
+  }
+
+  eliminarTodosEmpleados() {
+    this.formDataService.eliminarTodosEmpleados().subscribe( res => {
+      console.log(res);
+      this.boolMostrarTabla = false;
+      Swal.fire('Correcto', 'Empleados eliminados correctamente', 'success');
+    })
   }
 
 }

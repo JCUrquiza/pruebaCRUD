@@ -8,7 +8,10 @@ import { MenuItem } from 'primeng/api';
 })
 export class NavbarComponent {
 
+  darkMode = false;
+
   items: MenuItem[] = [];
+
 
   ngOnInit() {
 
@@ -25,4 +28,5 @@ export class NavbarComponent {
     ];
 
   }
+
 }

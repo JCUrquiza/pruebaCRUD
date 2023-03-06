@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,7 @@ import { CrearEmpleadoComponent } from './ui/components/crear-empleado/crear-emp
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { TableModule } from 'primeng/table';
     BrowserAnimationsModule,
     CommonModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
@@ -42,6 +45,7 @@ import { TableModule } from 'primeng/table';
     CalendarModule,
     InputNumberModule,
     TableModule,
+    RadioButtonModule,
     RouterModule.forRoot( ROUTES, { useHash: true } )
   ],
   exports: [],

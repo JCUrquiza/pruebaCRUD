@@ -4,8 +4,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 // Prime NG
 import { MenubarModule } from 'primeng/menubar';
+import { SpinnerComponent } from './spinner/spinner.component';
 
-const COMPONENTS = [NavbarComponent];
+const COMPONENTS = [NavbarComponent, SpinnerComponent];
 
 @NgModule({
   declarations: [COMPONENTS],

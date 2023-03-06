@@ -1,10 +1,10 @@
 export interface EmpleadoInterface {
-    identificador: string;
+    id: string;
     foto: string;
     nombre: string;
-    apellidoPaterno: string;
-    apellidoMaterno: string;
-    puestoTrabajo: string;
+    aPaterno: string;
+    aMaterno: string;
+    puestoTrab: string;
     salario: string;
     estatus: string;
     fechaContratacion: string;
@@ -12,3 +12,4 @@ export interface EmpleadoInterface {
     parentesco: string;
     sexo: string;
 }
+
